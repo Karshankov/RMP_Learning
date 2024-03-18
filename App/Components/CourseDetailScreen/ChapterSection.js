@@ -1,4 +1,10 @@
-import { View, Text, TouchableOpacity, ToastAndroid } from 'react-native';
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  ToastAndroid,
+  StyleSheet,
+} from 'react-native';
 import React from 'react';
 import { Ionicons } from '@expo/vector-icons';
 import Colors from '../../Utils/Colors';
@@ -6,14 +12,15 @@ import { useNavigation } from '@react-navigation/native';
 
 export default function ChapterSection({ chapterList, userEnrolledCourse }) {
   const navigation = useNavigation();
-  const OnChapterPress = (content) => {
-    if (userEnrolledCourse.length == 0) {
+  const OnChapterPress = (chapter) => {
+    if (userEnrolledCourse[0].length == 0) {
       ToastAndroid.show('Нажмите "Читать лекцию"!', ToastAndroid.LONG);
       return;
     } else {
-      
       navigation.navigate('chapter-content', {
-        content: content,
+        content: chapter.content,
+        chapterId: chapter.id,
+        userCourseRecordId: userEnrolledCourse[0]?.id,
       });
     }
   };
@@ -34,18 +41,8 @@ export default function ChapterSection({ chapterList, userEnrolledCourse }) {
         </Text>
         {chapterList.map((item, index) => (
           <TouchableOpacity
-            style={{
-              display: 'flex',
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              marginTop: 10,
-              padding: 15,
-              borderWidth: 1,
-              borderRadius: 10,
-              borderColor: Colors.GREY,
-            }}
-            onPress={() => OnChapterPress(item.content)}
+            style={styles.inCompleteChapter}
+            onPress={() => OnChapterPress(item)}
           >
             <View
               style={{
@@ -91,3 +88,17 @@ export default function ChapterSection({ chapterList, userEnrolledCourse }) {
     )
   );
 }
+
+const styles = StyleSheet.create({
+  inCompleteChapter: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginTop: 10,
+    padding: 15,
+    borderWidth: 1,
+    borderRadius: 10,
+    borderColor: Colors.GREY,
+  },
+});

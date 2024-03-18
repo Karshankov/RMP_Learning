@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
-import { View, Text, Button, StyleSheet } from 'react-native';
+import { View, Text, Button, StyleSheet, TouchableOpacity } from 'react-native';
+import Colors from '../../Utils/Colors';
+import { Article } from './HomeScreen';
 
 const topics = {
   Topic1: [
-    { question: 'Question 1 for Topic 1', options: ['Option 1', 'Option 2', 'Option 3'], correctAnswerIndex: 0 },
-    { question: 'Question 2 for Topic 1', options: ['Option 1', 'Option 2', 'Option 3'], correctAnswerIndex: 1 },
+    { topic: 'Тест 1', question: 'Сколько пальцев на одной руке у человека?', options: ['5 пальцев', '6 пальцев', '20 пальцев'], correctAnswerIndex: 0 },
+    { topic: 'Тест 1', question: 'А на ноге ? хехехе', options: ['3', '5', '19'], correctAnswerIndex: 1 },
     // Add more questions for Topic 1
   ],
   Topic2: [
-    { question: 'Question 1 for Topic 2', options: ['Option 1', 'Option 2', 'Option 3'], correctAnswerIndex: 2 },
-    { question: 'Question 2 for Topic 2', options: ['Option 1', 'Option 2', 'Option 3'], correctAnswerIndex: 0 },
+    { topic: 'Тест 2', question: 'Вопрос 1', options: ['Option 1', 'Option 2', 'Option 3'], correctAnswerIndex: 2 },
+    { topic: 'Тест 2', question: 'Вопрос 2', options: ['Option 1', 'Option 2', 'Option 3'], correctAnswerIndex: 0 },
     // Add more questions for Topic 2
   ],
   // Add more topics here
@@ -25,6 +27,7 @@ export default function QuizScreen({ route, navigation }) {
 
   const handleOptionSelect = (index) => {
     setSelectedOption(index);
+    handleNextQuestion();
   };
 
   const handleNextQuestion = () => {
@@ -41,21 +44,27 @@ export default function QuizScreen({ route, navigation }) {
     }
   };
 
-  const progress = ((currentQuestionIndex + 1) / questions.length) * 100;
+  const progress = ((currentQuestionIndex) / questions.length) * 100;
 
   return (
     <View style={styles.container}>
-      <Text style={styles.questionText}>{currentQuestion.question}</Text>
-      {currentQuestion.options.map((option, index) => (
-        <Button
-          key={index}
-          title={option}
-          onPress={() => handleOptionSelect(index)}
-          disabled={selectedOption !== null}
-        />
-      ))}
-      <ProgressBar progress={progress} />
-      <Button title="Next" onPress={handleNextQuestion} disabled={selectedOption === null} />
+      <Article title={currentQuestion.topic} />
+      <View style={styles.questions}>
+        <Text style={styles.questionText}>{currentQuestion.question}</Text>
+        {currentQuestion.options.map((option, index) => (
+          <TouchableOpacity
+            key={index}
+            style={[styles.options, selectedOption === index && styles.disabledOption]}
+            onPress={() => handleOptionSelect(index)} // Call handleOptionSelect() on press
+          >
+            <Text style={styles.optionText}>{option}</Text>
+          </TouchableOpacity>
+        ))}
+      </View>
+      <View style={styles.bar}>
+        <ProgressBar progress={progress} />
+        <Button title="Продолжить" onPress={handleNextQuestion} disabled={selectedOption === null} color={Colors.SECOND} />
+      </View>
     </View>
   );
 }
@@ -70,22 +79,53 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
+    alignContent: 'center',
+    flexDirection: 'column',
+    backgroundColor: Colors.WHITE,
+  },
+  options: {
+    margin: 10,
+    width: '80%',
+    height: '8%',
+    justifyContent: 'center',
+    alignSelf: 'center',
     alignItems: 'center',
+    backgroundColor: Colors.PRIMARY,
+    borderRadius: 12,
+  },
+  optionText: {
+    fontSize: 20,
+    color: Colors.WHITE
   },
   questionText: {
-    fontSize: 18,
-    marginBottom: 20,
+    alignSelf: 'center',
+    fontSize: 24,
+    marginBottom: 40,
+    width: '80%',
+    textAlign: 'center',
+    fontFamily: 'montserrat-medium'
   },
   progressBar: {
-    width: '100%',
-    height: 10,
+    alignSelf: 'center',
+    width: '80%',
+    height: 20,
     backgroundColor: '#ccc',
-    borderRadius: 5,
+    borderRadius: 12,
     marginVertical: 20,
   },
   progress: {
     height: '100%',
-    backgroundColor: 'green',
+    backgroundColor: Colors.PRIMARY,
     borderRadius: 5,
   },
+  bar: {
+    flex: 0.4
+  },
+  questions: {
+    flex: 2,
+    justifyContent: 'center'
+  },
+  disabledOption: {
+    backgroundColor: Colors.SECOND
+  }
 });

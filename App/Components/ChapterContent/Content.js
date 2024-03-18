@@ -12,13 +12,14 @@ import ContentItem from './ContentItem';
 import Colors from '../../Utils/Colors';
 import { useNavigation } from '@react-navigation/native';
 
-export default function Content({ content, output }) {
+export default function Content({ content, onChapterFinish }) {
   let contentRef;
   const navigation = useNavigation();
   const [activeIndex, setActiveIndex] = useState(0);
   const onNextBtnPress = (index) => {
     if (content?.length <= index + 1) {
-      navigation.goBack();
+      //navigation.goBack();
+      onChapterFinish();
       return;
     }
     setActiveIndex(index + 1);
@@ -44,7 +45,8 @@ export default function Content({ content, output }) {
             }}
           >
             <Text
-              style={{//5342
+              style={{
+                //5342
                 fontFamily: 'montserrat-bold',
                 fontSize: 22,
                 marginTop: 5,
