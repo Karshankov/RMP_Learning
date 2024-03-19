@@ -1,5 +1,5 @@
 import { View, Text, TouchableOpacity, ToastAndroid } from 'react-native';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import DetailSection from '../Components/CourseDetailScreen/DetailSection';
@@ -7,19 +7,21 @@ import ChapterSection from '../Components/CourseDetailScreen/ChapterSection';
 import { ScrollView } from 'react-native-gesture-handler';
 import { useUser } from '@clerk/clerk-expo';
 import { enrollCourse, getUserEnrolledCourse } from '../Services';
+import { CompleteChapterContext } from '../Components/Context/CompleteChapterContext';
 
 export default function CourseDetailScreen() {
   const navigate = useNavigation();
   const params = useRoute().params;
   const { user } = useUser();
   const [userEnrolledCourse, setUserEnrolledCourse] = useState([]);
-  useEffect(() => {
-    console.log(params.course);
-    if (user && params.course) {
-      GetUserEnrolledCourse();
-    }
-  }, [params.course, user]);
-
+  const {isChapterComplete,setIsChapterComplete}=useContext(CompleteChapterContext);
+  
+  useEffect(()=>{
+    isChapterComplete&&GetUserEnrolledCourse();
+  },[isChapterComplete])
+  
+  
+  
   const UserEnrollCourse = () => {
     enrollCourse(params.course.id, user.primaryEmailAddress.emailAddress).then(
       (resp) => {
@@ -41,6 +43,8 @@ export default function CourseDetailScreen() {
       setUserEnrolledCourse(resp.userEnrolledCourses);
     });
   };
+
+  
 
   return (
     <ScrollView style={{ padding: 20 }}>

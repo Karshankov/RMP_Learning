@@ -11,7 +11,7 @@ export default function Header() {
   return (
     isLoaded && (
       <GestureHandlerRootView>
-        <View>
+        <View style={{marginTop: 50}}>
           <View style={[{ justifyContent: 'space-between' }, styles.rowStyle]}>
             <View style={styles.rowStyle}>
               <Image
@@ -22,7 +22,7 @@ export default function Header() {
                   borderRadius: 99,
                 }}
               />
-              <View>
+              <View >
                 <Text style={{ color: Colors.WHITE }}>Добро пожаловать,</Text>
                 <Text style={styles.mainHeader}>{user?.fullName}</Text>
               </View>
@@ -32,7 +32,7 @@ export default function Header() {
               <Text style={styles.mainHeader}>38</Text>
             </View>
           </View>
-          <View
+          {/* <View
             style={{
               backgroundColor: Colors.WHITE,
               display: 'flex',
@@ -46,7 +46,7 @@ export default function Header() {
           >
             <TextInput placeholder="Поиск лекции" style={{ fontSize: 18 }} />
             <Ionicons name="search-circle" size={50} color={Colors.PRIMARY} />
-          </View>
+          </View> */}
         </View>
       </GestureHandlerRootView>
     )

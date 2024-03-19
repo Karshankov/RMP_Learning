@@ -1,4 +1,4 @@
-import { View, Text, FlatList, Image, TouchableOpacity } from 'react-native';
+import { View, Text, FlatList, Image, TouchableOpacity,  } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import { getCourseList } from '../../Services';
 import SubHeading from '../SubHeading';

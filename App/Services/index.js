@@ -75,9 +75,8 @@ export const enrollCourse = async (courseId, userEmail) => {
   return result;
 };
 
-export const getUserEnrolledCourse = async (courseId, userEmail) => {
-  const query =
-    gql`
+export const getUserEnrolledCourse=async(courseId,userEmail)=>{
+  const query=gql`
   query GetUserEnrolledCourse {
     userEnrolledCourses(
       where: {courseId: "`+courseId+`", 
@@ -90,10 +89,10 @@ export const getUserEnrolledCourse = async (courseId, userEmail) => {
       }
     }
   }
-  `;
-  const result = await request(MASTER_URL, query);
+  `
+  const result=await request(MASTER_URL,query);
   return result;
-};
+}
 
 export const MarkChapterCompleted = async (chapterId, recordId) => {
   const mutationQuery =
