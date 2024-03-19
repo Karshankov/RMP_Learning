@@ -1,0 +1,302 @@
+{
+    "Topic1": {
+        "title": "Основы разработки",
+        "questions": [
+            {
+                "question": "Что такое API?",
+                "options": [
+                    "Application Programming Interface",
+                    "Advanced Programming Interface",
+                    "Application Program Interface"
+                ],
+                "correctAnswerIndex": 0
+            },
+            {
+                "question": "Какая компания разработала операционную систему Android?",
+                "options": [
+                    "Apple",
+                    "Google",
+                    "Microsoft"
+                ],
+                "correctAnswerIndex": 1
+            },
+            {
+                "question": "Что такое MVP в контексте мобильной разработки?",
+                "options": [
+                    "Minimum Viable Product",
+                    "Most Valuable Player",
+                    "Mobile Virtualization Platform"
+                ],
+                "correctAnswerIndex": 0
+            },
+            {
+                "question": "Как называется язык разметки для описания пользовательских интерфейсов в iOS?",
+                "options": [
+                    "HTML",
+                    "XML",
+                    "SwiftUI"
+                ],
+                "correctAnswerIndex": 2
+            },
+            {
+                "question": "Какой инструмент используется для анализа производительности мобильного приложения?",
+                "options": [
+                    "Redux",
+                    "Xcode Instruments",
+                    "Postman"
+                ],
+                "correctAnswerIndex": 1
+            }
+        ]
+    },
+    "Topic2": {
+        "title": "UI/UX дизайн",
+        "questions": [
+            {
+                "question": "Что такое Wireframe?",
+                "options": [
+                    "Макет пользовательского интерфейса",
+                    "Код на JavaScript",
+                    "Компонент React Native"
+                ],
+                "correctAnswerIndex": 0
+            },
+            {
+                "question": "Какая техника используется для создания интерактивных прототипов мобильных приложений?",
+                "options": [
+                    "Storyboarding",
+                    "Sketching",
+                    "Prototyping"
+                ],
+                "correctAnswerIndex": 2
+            },
+            {
+                "question": "Какие из перечисленных элементов входят в UI дизайн?",
+                "options": [
+                    "Базы данных",
+                    "Графики и изображения",
+                    "Серверы"
+                ],
+                "correctAnswerIndex": 1
+            },
+            {
+                "question": "Что такое Material Design?",
+                "options": [
+                    "Фреймворк для создания мобильных приложений",
+                    "Дизайн-методология от Google",
+                    "Типографический инструмент"
+                ],
+                "correctAnswerIndex": 1
+            },
+            {
+                "question": "Какой инструмент используется для создания макетов пользовательского интерфейса?",
+                "options": [
+                    "Adobe Photoshop",
+                    "Microsoft Word",
+                    "Sublime Text"
+                ],
+                "correctAnswerIndex": 0
+            }
+        ]
+    },
+    "Topic3": {
+        "title": "Работа с данными",
+        "questions": [
+            {
+                "question": "Что такое CRUD?",
+                "options": [
+                    "Create, Read, Update, Delete",
+                    "Commonly React Used Definitions",
+                    "Creative Reasoning and Understanding of Data"
+                ],
+                "correctAnswerIndex": 0
+            },
+            {
+                "question": "Какой тип хранилища данных используется для хранения данных мобильного приложения на стороне клиента?",
+                "options": [
+                    "Relational Database",
+                    "NoSQL Database",
+                    "Local Storage"
+                ],
+                "correctAnswerIndex": 2
+            },
+            {
+                "question": "Что такое REST API?",
+                "options": [
+                    "Remote Service Transfer Protocol",
+                    "Representational State Transfer",
+                    "Real-time Application Server Technology"
+                ],
+                "correctAnswerIndex": 1
+            },
+            {
+                "question": "Какой метод HTTP используется для создания новых данных на сервере?",
+                "options": [
+                    "GET",
+                    "POST",
+                    "PUT"
+                ],
+                "correctAnswerIndex": 1
+            },
+            {
+                "question": "Что такое ORM?",
+                "options": [
+                    "Object-Relational Mapping",
+                    "Object Rendering Model",
+                    "Online Relational Management"
+                ],
+                "correctAnswerIndex": 0
+            }
+        ]
+    },
+    "Topic4": {
+        "title": "Тестирование и отладка",
+        "questions": [
+            {
+                "question": "Что такое Unit-тестирование?",
+                "options": [
+                    "Тестирование всего приложения целиком",
+                    "Тестирование отдельных компонентов или модулей",
+                    "Тестирование пользовательского интерфейса"
+                ],
+                "correctAnswerIndex": 1
+            },
+            {
+                "question": "Что такое дублирование кода в контексте тестирования?",
+                "options": [
+                    "Процесс создания копий приложения для тестирования",
+                    "Наличие нескольких копий одного и того же теста",
+                    "Повторное использование одного и того же кода для тестирования разных компонентов"
+                ],
+                "correctAnswerIndex": 2
+            },
+            {
+                "question": "Какой тип ошибок может быть выявлен при помощи тестирования совместимости?",
+                "options": [
+                    "Ошибки в логике приложения",
+                    "Ошибки, связанные с сетью и интерфейсом",
+                    "Ошибки, возникающие из-за различий в операционных системах и устройствах"
+                ],
+                "correctAnswerIndex": 2
+            },
+            {
+                "question": "Что такое дебаггинг?",
+                "options": [
+                    "Процесс исправления ошибок в коде",
+                    "Анализ данных приложения",
+                    "Изучение отзывов пользователей"
+                ],
+                "correctAnswerIndex": 0
+            },
+            {
+                "question": "Какие инструменты используются для проведения UI-тестирования?",
+                "options": [
+                    "JUnit",
+                    "Selenium",
+                    "Appium"
+                ],
+                "correctAnswerIndex": 2
+            }
+        ]
+    },
+    "Topic5": {
+        "title": "Управление проектом",
+        "questions": [
+            {
+                "question": "Что такое SCRUM?",
+                "options": [
+                    "Методология управления проектами",
+                    "Язык программирования",
+                    "Фреймворк для разработки мобильных приложений"
+                ],
+                "correctAnswerIndex": 0
+            },
+            {
+                "question": "Какой инструмент часто используется для управления задачами в Agile-проектах?",
+                "options": [
+                    "JIRA",
+                    "Photoshop",
+                    "MySQL"
+                ],
+                "correctAnswerIndex": 0
+            },
+            {
+                "question": "Какой из ниже перечисленных методов используется для оценки сложности задач в Agile-подходе?",
+                "options": [
+                    "Gantt chart",
+                    "Fibonacci sequence",
+                    "V-модель"
+                ],
+                "correctAnswerIndex": 1
+            },
+            {
+                "question": "Что такое Product Owner в Agile?",
+                "options": [
+                    "Руководитель разработки",
+                    "Клиент или представитель бизнеса",
+                    "Тестировщик"
+                ],
+                "correctAnswerIndex": 1
+            },
+            {
+                "question": "Что такое Daily Standup Meeting в Agile?",
+                "options": [
+                    "Ежедневное совещание команды",
+                    "Ежемесячное обсуждение проблем проекта",
+                    "Конференция с клиентом"
+                ],
+                "correctAnswerIndex": 0
+            }
+        ]
+    },
+    "Topic6": {
+        "title": "Дизайн интерфейса",
+        "questions": [
+            {
+                "question": "Какие из перечисленных ниже элементов являются частью UI-дизайна?",
+                "options": [
+                    "Бэкенд",
+                    "Цветовая схема",
+                    "Алгоритмы"
+                ],
+                "correctAnswerIndex": 1
+            },
+            {
+                "question": "Что такое UX-дизайн?",
+                "options": [
+                    "Дизайн, который обеспечивает хороший внешний вид приложения",
+                    "Дизайн, который обеспечивает удобство использования приложения",
+                    "Дизайн, который учитывает только внешний вид элементов"
+                ],
+                "correctAnswerIndex": 1
+            },
+            {
+                "question": "Какие из ниже перечисленных могут быть составными частями UI-дизайна?",
+                "options": [
+                    "Шрифты и типографика",
+                    "Сетевые протоколы",
+                    "Алгоритмы поиска"
+                ],
+                "correctAnswerIndex": 0
+            },
+            {
+                "question": "Что такое макет интерфейса?",
+                "options": [
+                    "Эскиз интерфейса, определяющий расположение элементов",
+                    "Текст, описывающий интерфейс",
+                    "Код, определяющий стили элементов"
+                ],
+                "correctAnswerIndex": 0
+            },
+            {
+                "question": "Что такое принцип \"Минимализма\" в дизайне интерфейса?",
+                "options": [
+                    "Принцип добавления большего количества элементов на экран",
+                    "Принцип упрощения и удаления лишних деталей",
+                    "Принцип использования разных стилей для каждого элемента"
+                ],
+                "correctAnswerIndex": 1
+            }
+        ]
+    }
+}

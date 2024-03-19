@@ -1,10 +1,11 @@
 import React from 'react';
 import { View, TouchableOpacity, StyleSheet, Text, Image } from 'react-native';
 import Colors from '../../Utils/Colors';
+import topics from './quizData.json';
 
 export const Article = ({ title }) => {
   return (
-    <Text style={{ position: 'absolute', alignSelf: 'center', top: '5%', fontSize: 30, fontFamily: 'montserrat-medium' }}>
+    <Text style={{ position: 'absolute', alignSelf: 'center', top: '8%', fontSize: 30, fontFamily: 'montserrat-medium' }}>
       {title}
     </Text>
   );
@@ -12,15 +13,13 @@ export const Article = ({ title }) => {
 
 const ButtonQuiz = ({ title, nav, topic, navigation, source }) => {
   return (
-    <>
-      <TouchableOpacity
-        onPress={() => navigation.navigate(nav, { topic: topic })}
-        style={styles.cells}
-      >
-        <Image source={source} style={styles.img} />
-        <Text style={styles.title}>{title}</Text>
-      </TouchableOpacity>
-    </>
+    <TouchableOpacity
+      onPress={() => navigation.navigate(nav, { topic: topic })}
+      style={styles.cells}
+    >
+      <Image source={source} style={styles.img} />
+      <Text style={styles.title}>{title}</Text>
+    </TouchableOpacity>
   );
 };
 
@@ -29,41 +28,41 @@ export default function HomeScreen({ navigation }) {
     <View style={styles.container}>
       <Article title='Тесты' />
       <ButtonQuiz
-        title='Тест 1'
+        title={topics.Topic1.title}
         nav='Quiz'
         topic='Topic1'
         navigation={navigation}
         source={require('../../../assets/images/crown.png')}
       />
       <ButtonQuiz
-        title="Тест 2"
+        title={topics.Topic2.title}
         nav='Quiz'
         topic='Topic2'
         navigation={navigation}
         source={require('../../../assets/images/google.png')}
       />
       <ButtonQuiz
-        title="Choose Topic 3" //название самой ячейки
+        title={topics.Topic3.title}//название самой ячейки
         nav='Quiz'
-        topic='Topic2' //меняешь на то, в какой квиз тебе надо
+        topic='Topic3' //меняешь на то, в какой квиз тебе надо
         navigation={navigation}
       />
       <ButtonQuiz
-        title="Choose Topic 4"
+        title={topics.Topic4.title}
         nav='Quiz'
-        topic='Topic2'
+        topic='Topic4'
         navigation={navigation}
       />
       <ButtonQuiz
-        title="Choose Topic 5"
+        title={topics.Topic5.title}
         nav='Quiz'
-        topic='Topic2'
+        topic='Topic5'
         navigation={navigation}
       />
       <ButtonQuiz
-        title="Choose Topic 6"
+        title={topics.Topic6.title}
         nav='Quiz'
-        topic='Topic2'
+        topic='Topic6'
         navigation={navigation}
       />
     </View>
@@ -96,8 +95,9 @@ const styles = StyleSheet.create({
     height: '70%',
     aspectRatio: 1, //отвечает за то, что ФОТО КВАДРАТНОЕ, зависит от высоты
   },
-  title: { //текст
-    fontSize: 20,
+  title: {
+    fontSize: 18,
     color: Colors.WHITE,
+    textAlign: 'center',
   },
 });

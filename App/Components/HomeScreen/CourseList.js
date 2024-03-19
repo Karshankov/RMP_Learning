@@ -1,4 +1,4 @@
-import { View, Text, FlatList, Image, TouchableOpacity,  } from 'react-native';
+import { View, Text, FlatList, Image, TouchableOpacity, } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import { getCourseList } from '../../Services';
 import SubHeading from '../SubHeading';
@@ -23,8 +23,8 @@ export default function CourseList({ courseLevel }) {
   };
   let name = '';
   if (courseLevel === 'One') name = 'РАЗДЕЛ 1. Введение в Android';
-  if (courseLevel === 'Two')
-    name = 'РАЗДЕЛ 2. Основы создания мобильных приложений';
+  if (courseLevel === 'Two') name = 'РАЗДЕЛ 2. Основы создания мобильных приложений';
+  if (courseLevel === 'Three') name = 'РАЗДЕЛ 3. Основы программирования на Java';
 
   return (
     <View>

@@ -14,21 +14,21 @@ export default function CourseDetailScreen() {
   const params = useRoute().params;
   const { user } = useUser();
   const [userEnrolledCourse, setUserEnrolledCourse] = useState([]);
-  const {isChapterComplete,setIsChapterComplete}=useContext(CompleteChapterContext);
-  
-  useEffect(()=>{
-    isChapterComplete&&GetUserEnrolledCourse();
-  },[isChapterComplete])
-  
-  
-  
+  const { isChapterComplete, setIsChapterComplete } = useContext(CompleteChapterContext);
+
+  useEffect(() => {
+    isChapterComplete && GetUserEnrolledCourse();
+  }, [isChapterComplete])
+
+
+
   const UserEnrollCourse = () => {
     enrollCourse(params.course.id, user.primaryEmailAddress.emailAddress).then(
       (resp) => {
         // console.log('Вроде робит', resp);
         if (resp) {
           GetUserEnrolledCourse();
-          ToastAndroid.show('Теперь вы читаете эту лекцию!', ToastAndroid.LONG);
+          // ToastAndroid.show('Теперь вы читаете эту лекцию!', ToastAndroid.LONG);
         }
       }
     );
@@ -44,7 +44,7 @@ export default function CourseDetailScreen() {
     });
   };
 
-  
+
 
   return (
     <ScrollView style={{ padding: 20 }}>
@@ -52,13 +52,13 @@ export default function CourseDetailScreen() {
         <Ionicons name="ios-arrow-back-circle" size={40} color="black" />
       </TouchableOpacity>
       <DetailSection
-         course={params.course}
+        course={params.course}
         userEnrolledCourse={userEnrolledCourse}
         enrollCourse={() => UserEnrollCourse()}
       />
       <ChapterSection chapterList={params.course.chapters}
-      userEnrolledCourse={userEnrolledCourse}
-       />
+        userEnrolledCourse={userEnrolledCourse}
+      />
     </ScrollView>
   );
 }
